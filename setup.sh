@@ -29,7 +29,7 @@ function command_exists {
 
 echo "**** Setting up necessary Gems, Eggs and [RPMs|Mac Ports] for the jdf site"
 
-echo "** Testing environment"
+echo "*** Testing environment"
 
 command_exists tar
 command_exists curl
@@ -50,11 +50,11 @@ do
   ((gi++))
 done
 
-echo "Setting up pip, the more modern Python egg installer"
+echo "*** Setting up pip, the more modern Python egg installer"
 
 if ! command_exists "pip"
 then
-   $SUDO $EASY_INSTALL --upgrade $EASY_INSTALL_OPTIONS "pip"
+   $SUDO $EASY_INSTALL $EASY_INSTALL_OPTIONS pip
 fi
 
 installed_eggs=`pip freeze`
