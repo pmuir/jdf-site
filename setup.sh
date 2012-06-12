@@ -54,10 +54,9 @@ do
   ((gi++))
 done
 
-echo "*** Setting up pip, the more modern Python egg installer"
-
 if ! command_exists "pip"
 then
+   echo "*** Setting up pip, the more modern Python egg installer"
    $SUDO $EASY_INSTALL $EASY_INSTALL_OPTIONS pip
 fi
 
