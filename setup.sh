@@ -27,12 +27,12 @@ function command_exists {
     command -v $1 >/dev/null 2>&1 || { echo "I $1 require but it's not installed. Aborting." >&2; exit 1; }
 }
 
-echo "**** Testing environment"
+echo "**** Setting up necessary Gems, Eggs and [RPMs|Mac Ports] for the jdf site"
+
+echo "** Testing environment"
 
 command_exists tar
 command_exists curl
-
-echo "**** Setting up necessary Gems, Eggs and [RPMs|Mac Ports] for the jdf site"
 
 echo "*** Gems"
 
@@ -49,6 +49,8 @@ do
   fi
   ((gi++))
 done
+
+echo "Setting up pip, the more modern Python egg installer"
 
 if ! command_exists "pip"
 then
