@@ -229,6 +229,7 @@ module Awestruct
 
       def page_changes(page, site, size)
         changes = []
+        puts site.dir
         page_dir = site.dir.to_s.match(/^(.*)(\/)$/)[1] + @path_prefix
         rpath = page.source_path.to_s.match(/(#{page_dir})\/(.+)/)[2]
         g = Git.open(page_dir)
